@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PwdHasher</title>
+    <link rel="icon" onerror="this.onerror=null; this.href='favicon2.ico';" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%208.86%2034.84%2046.93%22%20data-asc%3D%220.9052734375%22%3E%3Cg%20fill%3D%22%23ab0ed2%22%3E%3Cg%20fill%3D%22%23ab0ed2%22%20transform%3D%22translate%280%2C%200%29%22%3E%3Cpath%20d%3D%22M0%2055.79L0%208.86L3.83%208.86L3.83%2055.79L0%2055.79ZM34.84%2029.61L11.13%2039.75L11.13%2035.38L29.91%2027.59L11.13%2019.87L11.13%2015.50L34.84%2025.51L34.84%2029.61Z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+    <script>
+        /*!
+        * clipboard.js v2.0.11
+        * https://clipboardjs.com/
+        *
+        * Licensed MIT © Zeno Rocha
+        */
+        !function(t,e){"object"==typeof exports&&"object"==typeof module?module.exports=e():"function"==typeof define&&define.amd?define([],e):"object"==typeof exports?exports.ClipboardJS=e():t.ClipboardJS=e()}(this,function(){return n={686:function(t,e,n){"use strict";n.d(e,{default:function(){return b}});var e=n(279),i=n.n(e),e=n(370),u=n.n(e),e=n(817),r=n.n(e);function c(t){try{return document.execCommand(t)}catch(t){return}}var a=function(t){t=r()(t);return c("cut"),t};function o(t,e){var n,o,t=(n=t,o="rtl"===document.documentElement.getAttribute("dir"),(t=document.createElement("textarea")).style.fontSize="12pt",t.style.border="0",t.style.padding="0",t.style.margin="0",t.style.position="absolute",t.style[o?"right":"left"]="-9999px",o=window.pageYOffset||document.documentElement.scrollTop,t.style.top="".concat(o,"px"),t.setAttribute("readonly",""),t.value=n,t);return e.container.appendChild(t),e=r()(t),c("copy"),t.remove(),e}var f=function(t){var e=1<arguments.length&&void 0!==arguments[1]?arguments[1]:{container:document.body},n="";return"string"==typeof t?n=o(t,e):t instanceof HTMLInputElement&&!["text","search","url","tel","password"].includes(null==t?void 0:t.type)?n=o(t.value,e):(n=r()(t),c("copy")),n};function l(t){return(l="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}var s=function(){var t=0<arguments.length&&void 0!==arguments[0]?arguments[0]:{},e=t.action,n=void 0===e?"copy":e,o=t.container,e=t.target,t=t.text;if("copy"!==n&&"cut"!==n)throw new Error('Invalid "action" value, use either "copy" or "cut"');if(void 0!==e){if(!e||"object"!==l(e)||1!==e.nodeType)throw new Error('Invalid "target" value, use a valid Element');if("copy"===n&&e.hasAttribute("disabled"))throw new Error('Invalid "target" attribute. Please use "readonly" instead of "disabled" attribute');if("cut"===n&&(e.hasAttribute("readonly")||e.hasAttribute("disabled")))throw new Error('Invalid "target" attribute. You can\'t cut text from elements with "readonly" or "disabled" attributes')}return t?f(t,{container:o}):e?"cut"===n?a(e):f(e,{container:o}):void 0};function p(t){return(p="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}function d(t,e){for(var n=0;n<e.length;n++){var o=e[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(t,o.key,o)}}function y(t,e){return(y=Object.setPrototypeOf||function(t,e){return t.__proto__=e,t})(t,e)}function h(n){var o=function(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Date.prototype.toString.call(Reflect.construct(Date,[],function(){})),!0}catch(t){return!1}}();return function(){var t,e=v(n);return t=o?(t=v(this).constructor,Reflect.construct(e,arguments,t)):e.apply(this,arguments),e=this,!(t=t)||"object"!==p(t)&&"function"!=typeof t?function(t){if(void 0!==t)return t;throw new ReferenceError("this hasn't been initialised - super() hasn't been called")}(e):t}}function v(t){return(v=Object.setPrototypeOf?Object.getPrototypeOf:function(t){return t.__proto__||Object.getPrototypeOf(t)})(t)}function m(t,e){t="data-clipboard-".concat(t);if(e.hasAttribute(t))return e.getAttribute(t)}var b=function(){!function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function");t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,writable:!0,configurable:!0}}),e&&y(t,e)}(r,i());var t,e,n,o=h(r);function r(t,e){var n;return function(t){if(!(t instanceof r))throw new TypeError("Cannot call a class as a function")}(this),(n=o.call(this)).resolveOptions(e),n.listenClick(t),n}return t=r,n=[{key:"copy",value:function(t){var e=1<arguments.length&&void 0!==arguments[1]?arguments[1]:{container:document.body};return f(t,e)}},{key:"cut",value:function(t){return a(t)}},{key:"isSupported",value:function(){var t=0<arguments.length&&void 0!==arguments[0]?arguments[0]:["copy","cut"],t="string"==typeof t?[t]:t,e=!!document.queryCommandSupported;return t.forEach(function(t){e=e&&!!document.queryCommandSupported(t)}),e}}],(e=[{key:"resolveOptions",value:function(){var t=0<arguments.length&&void 0!==arguments[0]?arguments[0]:{};this.action="function"==typeof t.action?t.action:this.defaultAction,this.target="function"==typeof t.target?t.target:this.defaultTarget,this.text="function"==typeof t.text?t.text:this.defaultText,this.container="object"===p(t.container)?t.container:document.body}},{key:"listenClick",value:function(t){var e=this;this.listener=u()(t,"click",function(t){return e.onClick(t)})}},{key:"onClick",value:function(t){var e=t.delegateTarget||t.currentTarget,n=this.action(e)||"copy",t=s({action:n,container:this.container,target:this.target(e),text:this.text(e)});this.emit(t?"success":"error",{action:n,text:t,trigger:e,clearSelection:function(){e&&e.focus(),window.getSelection().removeAllRanges()}})}},{key:"defaultAction",value:function(t){return m("action",t)}},{key:"defaultTarget",value:function(t){t=m("target",t);if(t)return document.querySelector(t)}},{key:"defaultText",value:function(t){return m("text",t)}},{key:"destroy",value:function(){this.listener.destroy()}}])&&d(t.prototype,e),n&&d(t,n),r}()},828:function(t){var e;"undefined"==typeof Element||Element.prototype.matches||((e=Element.prototype).matches=e.matchesSelector||e.mozMatchesSelector||e.msMatchesSelector||e.oMatchesSelector||e.webkitMatchesSelector),t.exports=function(t,e){for(;t&&9!==t.nodeType;){if("function"==typeof t.matches&&t.matches(e))return t;t=t.parentNode}}},438:function(t,e,n){var u=n(828);function i(t,e,n,o,r){var i=function(e,n,t,o){return function(t){t.delegateTarget=u(t.target,n),t.delegateTarget&&o.call(e,t)}}.apply(this,arguments);return t.addEventListener(n,i,r),{destroy:function(){t.removeEventListener(n,i,r)}}}t.exports=function(t,e,n,o,r){return"function"==typeof t.addEventListener?i.apply(null,arguments):"function"==typeof n?i.bind(null,document).apply(null,arguments):("string"==typeof t&&(t=document.querySelectorAll(t)),Array.prototype.map.call(t,function(t){return i(t,e,n,o,r)}))}},879:function(t,n){n.node=function(t){return void 0!==t&&t instanceof HTMLElement&&1===t.nodeType},n.nodeList=function(t){var e=Object.prototype.toString.call(t);return void 0!==t&&("[object NodeList]"===e||"[object HTMLCollection]"===e)&&"length"in t&&(0===t.length||n.node(t[0]))},n.string=function(t){return"string"==typeof t||t instanceof String},n.fn=function(t){return"[object Function]"===Object.prototype.toString.call(t)}},370:function(t,e,n){var f=n(879),l=n(438);t.exports=function(t,e,n){if(!t&&!e&&!n)throw new Error("Missing required arguments");if(!f.string(e))throw new TypeError("Second argument must be a String");if(!f.fn(n))throw new TypeError("Third argument must be a Function");if(f.node(t))return c=e,a=n,(u=t).addEventListener(c,a),{destroy:function(){u.removeEventListener(c,a)}};if(f.nodeList(t))return o=t,r=e,i=n,Array.prototype.forEach.call(o,function(t){t.addEventListener(r,i)}),{destroy:function(){Array.prototype.forEach.call(o,function(t){t.removeEventListener(r,i)})}};if(f.string(t))return t=t,e=e,n=n,l(document.body,t,e,n);throw new TypeError("First argument must be a String, HTMLElement, HTMLCollection, or NodeList");var o,r,i,u,c,a}},817:function(t){t.exports=function(t){var e,n="SELECT"===t.nodeName?(t.focus(),t.value):"INPUT"===t.nodeName||"TEXTAREA"===t.nodeName?((e=t.hasAttribute("readonly"))||t.setAttribute("readonly",""),t.select(),t.setSelectionRange(0,t.value.length),e||t.removeAttribute("readonly"),t.value):(t.hasAttribute("contenteditable")&&t.focus(),n=window.getSelection(),(e=document.createRange()).selectNodeContents(t),n.removeAllRanges(),n.addRange(e),n.toString());return n}},279:function(t){function e(){}e.prototype={on:function(t,e,n){var o=this.e||(this.e={});return(o[t]||(o[t]=[])).push({fn:e,ctx:n}),this},once:function(t,e,n){var o=this;function r(){o.off(t,r),e.apply(n,arguments)}return r._=e,this.on(t,r,n)},emit:function(t){for(var e=[].slice.call(arguments,1),n=((this.e||(this.e={}))[t]||[]).slice(),o=0,r=n.length;o<r;o++)n[o].fn.apply(n[o].ctx,e);return this},off:function(t,e){var n=this.e||(this.e={}),o=n[t],r=[];if(o&&e)for(var i=0,u=o.length;i<u;i++)o[i].fn!==e&&o[i].fn._!==e&&r.push(o[i]);return r.length?n[t]=r:delete n[t],this}},t.exports=e,t.exports.TinyEmitter=e}},r={},o.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return o.d(e,{a:e}),e},o.d=function(t,e){for(var n in e)o.o(e,n)&&!o.o(t,n)&&Object.defineProperty(t,n,{enumerable:!0,get:e[n]})},o.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},o(686).default;function o(t){if(r[t])return r[t].exports;var e=r[t]={exports:{}};return n[t](e,e.exports,o),e.exports}var n,r});
+    </script>
+
+    <style>
+        /* disable highlight on touchscreens */
+       * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Global Styles for Dark Theme */
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            height: 100dvh;
+            margin: 0;
+            user-select: none;
+            box-sizing: border-box;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .algorithm-mention {
+            font-family: 'Aktiv Grotesk', Times, serif ;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+            text-align: center;
+            line-height: 1.3;
+            font-size: 14px;
+            color: #e0e0e033;
+            height: 100%;
+        }
+
+        .arrow {
+            color: #e0e0e026;
+            font-size: 18px;
+        }
+
+
+        /* Card Container */
+        .card {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            text-align: center;
+            box-sizing: border-box;
+            height: 325px;
+            min-height: 325px;
+            max-height: 325px;
+            display: flex;
+            flex-direction: column;
+            z-index: 0;
+            margin-top: 50px;
+        }
+
+        #header {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            margin-top: 5px;
+            color: #e0e0e0de;
+        }
+
+        #spliter {
+            word-spacing: 6px;
+            font-size: 28px;
+            color:#ab0ed2;
+        }
+
+        .input-wrapper {
+            margin-top: 25px;;
+            position: relative;
+        }
+
+        /* Common styles for both password and text input types */
+        input[type="password"], input[type="text"] {
+            width: 100%; 
+            padding: 10px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background-color: #2c2c2c;
+            color: #e0e0e0;
+            font-size: 16px;
+            box-sizing: border-box;
+            padding-right: 40px;
+        }
+        input[type="password"]:focus, input[type="text"]:focus {
+            border-color: #e0e0e0de;
+            outline: none;
+        }
+
+        .eye-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+            cursor: pointer;
+            color: #b0b0b0;
+            font-size: 18px;
+            user-select: none;
+        }
+
+        #hashOutput {
+            white-space: normal;
+            color: #b82dc2;
+            padding: 0px 30px;
+            min-height: 40px;
+            box-sizing: border-box;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #hashOutputVisible {
+            padding: 15px 0px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            word-break: break-all;
+            font-size: 20px;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        #hashOutputHidden {
+            width: 100%;
+            height: 100%;
+            color: #ab0ed2;
+            padding: 25px 0px;
+            box-sizing: border-box;
+        }
+
+
+        .action-panel {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5px;
+        }
+
+        .action-icon {
+            cursor: pointer;
+            transition: color 0.3s ease, transform 0.15s ease;
+            color: #b0b0b0;
+        }
+
+
+        .action-icon:not(.disable-hover):not(.disable-hover-temp):hover {
+            color: #9605ba;
+            transform: scale(1.2);
+        }
+
+        .action-icon:active {
+            color: #800ed2 !important;
+            transform: scale(1.25) !important;
+            transition: all 0.01s ease !important;
+        }
+
+
+        .action-icon-click-start-manual {
+            color: #800ed2;
+            transition: all 0.1s ease;
+            transform: scale(1.3);
+        }
+
+        .action-icon-click-after-manual {
+            color: #b0b0b0;
+            transition: all 1s ease;
+            transform: scale(0.6);
+        }
+
+
+        @media (max-width: 600px) {
+            .card {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+
+        @media (max-height: 600px) {
+            .card {
+                margin-top: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <input id="hashOutputValue" type="text" readonly value="" style="opacity: 0; position: absolute; z-index: -9999; pointer-events: none;">
+
+
+    <svg style="display: none;">
+        <defs>
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" id="icon-eye">
+                <g>
+                    <path d="m12 14c1.1046 0 2-.8954 2-2s-.8954-2-2-2-2 .8954-2 2 .8954 2 2 2z"/>
+                    <path clip-rule="evenodd" d="m21.9783 10.8196c.623.6759.623 1.6849 0 2.3608-1.8389 1.9952-5.8961 5.8196-9.9783 5.8196-4.08221 0-8.13944-3.8244-9.97835-5.8196-.62302-.6759-.62302-1.6849 0-2.3608 1.83891-1.99523 5.89614-5.8196 9.97835-5.8196 4.0822 0 8.1394 3.82437 9.9783 5.8196zm-5.2805-2.00963c1.4879 1.02238 2.7781 2.26413 3.6471 3.19003-.869.9259-2.1592 2.1677-3.6471 3.19-1.6184 1.112-3.248 1.81-4.6978 1.81-1.4499 0-3.07945-.698-4.6978-1.81-1.48794-1.0223-2.77813-2.2641-3.64714-3.19.86901-.9259 2.1592-2.16765 3.64714-3.19003 1.61835-1.11198 3.2479-1.80997 4.6978-1.80997 1.4498 0 3.0794.69799 4.6978 1.80997z" fill-rule="evenodd"/>
+                </g>
+            </symbol>
+    
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" id="icon-eye-blind">
+                <path clip-rule="evenodd" d="m7.66041 17.7539-2.95332 2.9533-1.41421-1.4142 2.62823-2.6283c-1.64498-1.1692-3.02375-2.5341-3.89946-3.4843-.62302-.6759-.62302-1.6849 0-2.3608 1.83891-1.99523 5.89614-5.8196 9.97835-5.8196 1.485 0 2.9668.50613 4.3397 1.24619l2.9532-2.95322 1.4142 1.41421-2.6281 2.62814c1.6449 1.16921 3.0236 2.53413 3.8993 3.48428.623.6759.623 1.6849 0 2.3608-1.8389 1.9952-5.8961 5.8196-9.9783 5.8196-1.485 0-2.96676-.5061-4.33959-1.2461zm1.48789-1.4879c.9892.4669 1.9548.734 2.8517.734 1.4498 0 3.0794-.698 4.6978-1.81 1.4879-1.0223 2.7781-2.2641 3.6471-3.19-.869-.9259-2.1592-2.16765-3.6471-3.19003-.0185-.01271-.037-.02537-.0555-.03797l-2.71 2.71c.0441.1652.0677.3389.0677.518 0 1.1046-.8954 2-2 2-.1791 0-.3528-.0236-.518-.0677zm3.3698-6.1982c-.1653-.0442-.3389-.0678-.5181-.0678-1.1046 0-2 .8954-2 2 0 .1792.0236.3528.0678.5181l-2.71001 2.71c-.01853-.0127-.03706-.0253-.05559-.0381-1.48794-1.0223-2.77813-2.2641-3.64714-3.19.86901-.9259 2.1592-2.16765 3.64714-3.19003 1.61835-1.11198 3.2479-1.80997 4.6978-1.80997.8969 0 1.8625.2671 2.8518.73408z" fill-rule="evenodd"/>
+            </symbol>
+        </defs>
+    </svg>
+
+
+
+
+
+    <div class="card">
+        <div id="header">SHA-512<span id="spliter"> |> </span>Printable ASCII</div>
+
+        <div class="input-wrapper">
+            <input type="password" id="password" class="input-field" autofocus placeholder="enter to hash it">
+            <span id="toggleEye" class="eye-icon">👁️</span>
+        </div>
+
+        <div id="hashOutput">
+            <div id="hashOutputVisible" hidden></div>
+            <div id="hashOutputHidden" hidden>
+                <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  fill="currentColor"
+                        width="100%" height="100%" viewBox="0 0 76.688 76.687"
+                        xml:space="preserve">
+                    <g>
+                        <g>
+                            <path d="M75.191,30.104h-0.598c-0.574-6.778-4.99-12.47-11.062-14.894C57.993,7.232,48.773,1.992,38.345,1.992
+                                c-10.427,0-19.647,5.237-25.187,13.217c-6.07,2.424-10.485,8.114-11.06,14.895H1.5c-0.828,0-1.5,0.673-1.5,1.5
+                                c0,0.828,0.672,1.5,1.5,1.5h0.598C2.56,38.56,5.502,43.321,9.802,46.233l4.249,27.192c0.114,0.73,0.743,1.271,1.482,1.271h11.248
+                                c0.828,0,1.5-0.672,1.5-1.5c0-5.55,4.515-10.063,10.063-10.063c5.548,0,10.063,4.517,10.063,10.063c0,0.828,0.672,1.5,1.5,1.5
+                                h11.248c0.737,0,1.366-0.539,1.479-1.271l4.25-27.192c4.301-2.914,7.242-7.673,7.703-13.129h0.6c0.826,0,1.5-0.672,1.5-1.5
+                                C76.689,30.777,76.02,30.104,75.191,30.104z M38.345,4.992c8.084,0,15.374,3.49,20.434,9.042c-0.582-0.059-1.172-0.09-1.77-0.09
+                                c-9.229,0-16.816,7.123-17.582,16.157h-2.167c-0.765-9.034-8.352-16.156-17.582-16.156c-0.597,0-1.186,0.03-1.768,0.09
+                                C22.972,8.484,30.259,4.992,38.345,4.992z M65.993,32.527l-1.854,11.874c-2.113,1.185-4.541,1.86-7.129,1.86
+                                c-8.082,0-14.658-6.574-14.658-14.657c0-8.083,6.576-14.657,14.658-14.657c1.598,0,3.131,0.266,4.569,0.738
+                                C64.35,21.97,65.973,27.061,65.993,32.527z M10.699,32.527c0.021-5.466,1.645-10.557,4.413-14.842
+                                c1.439-0.474,2.973-0.738,4.569-0.738c8.083,0,14.658,6.574,14.658,14.657c0,8.082-6.575,14.658-14.658,14.658
+                                c-2.587,0-5.015-0.682-7.127-1.86L10.699,32.527z M5.025,31.604c0-4.497,2.04-8.523,5.237-11.215
+                                c-1.645,3.755-2.563,7.896-2.563,12.252c0,0.077,0.006,0.155,0.018,0.23l1.382,8.846C6.58,39.083,5.025,35.526,5.025,31.604z
+                                M59.872,71.696h-8.549c-0.746-6.5-6.281-11.563-12.979-11.563c-6.697,0-12.23,5.063-12.977,11.563h-8.55l-3.705-23.715
+                                c2.032,0.817,4.246,1.28,6.567,1.28c9.23,0,16.817-7.123,17.582-16.158h2.167c0.765,9.035,8.353,16.158,17.582,16.158
+                                c2.322,0,4.535-0.463,6.566-1.28L59.872,71.696z M67.596,41.716l1.381-8.846c0.012-0.075,0.018-0.153,0.018-0.23
+                                c0-4.354-0.918-8.497-2.562-12.252c3.199,2.69,5.24,6.718,5.24,11.215C71.67,35.526,70.111,39.083,67.596,41.716z"/>
+                            <path d="M25.777,25.671c0-3.36-2.734-6.095-6.096-6.095c-3.36,0-6.094,2.732-6.094,6.095c0,3.36,2.733,6.094,6.094,6.094
+                                S25.777,29.032,25.777,25.671z M19.68,28.765c-0.373,0-0.727-0.077-1.058-0.197c1.995-0.157,3.575-1.812,3.575-3.846
+                                c0-0.356-0.064-0.696-0.155-1.024c0.451,0.538,0.733,1.222,0.733,1.977C22.777,27.377,21.387,28.765,19.68,28.765z M19.198,24.721
+                                c0,0.482-0.395,0.876-0.877,0.876c-0.483,0-0.876-0.394-0.876-0.876s0.393-0.877,0.876-0.877
+                                C18.803,23.844,19.198,24.239,19.198,24.721z"/>
+                            <path d="M49.7,25.671c0,3.359,2.731,6.094,6.095,6.094c3.36,0,6.094-2.732,6.094-6.094c0-3.362-2.732-6.095-6.094-6.095
+                                C52.432,19.576,49.7,22.311,49.7,25.671z M53.559,24.721c0-0.482,0.393-0.877,0.877-0.877c0.481,0,0.875,0.395,0.875,0.877
+                                s-0.394,0.876-0.875,0.876C53.95,25.597,53.559,25.203,53.559,24.721z M55.795,28.765c-0.373,0-0.728-0.077-1.06-0.197
+                                c1.996-0.157,3.573-1.812,3.573-3.846c0-0.356-0.063-0.696-0.153-1.025c0.451,0.538,0.731,1.222,0.731,1.977
+                                C58.889,27.377,57.501,28.765,55.795,28.765z"/>
+                            <path d="M46.2,50.151h-8.555c-0.827,0-1.5,0.672-1.5,1.5c0,0.827,0.673,1.5,1.5,1.5H46.2c0.828,0,1.5-0.673,1.5-1.5
+                                C47.7,50.823,47.029,50.151,46.2,50.151z"/>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        
+
+        <div class="action-panel">
+            <svg id="copy-icon" class="action-icon" data-clipboard-target="#hashOutputValue" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z"></path></svg>
+            <svg id="toggle-icon" class="action-icon" width="24" height="24" fill="currentColor">
+                <use href="#icon-eye"></use>
+            </svg>
+            <svg id="clear-icon" class="action-icon" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.63603 5.63604C6.02656 5.24552 6.65972 5.24552 7.05025 5.63604L12 10.5858L16.9497 5.63604C17.3403 5.24552 17.9734 5.24552 18.364 5.63604C18.7545 6.02657 18.7545 6.65973 18.364 7.05025L13.4142 12L18.364 16.9497C18.7545 17.3403 18.7545 17.9734 18.364 18.364C17.9734 18.7545 17.3403 18.7545 16.9497 18.364L12 13.4142L7.05025 18.364C6.65972 18.7545 6.02656 18.7545 5.63603 18.364C5.24551 17.9734 5.24551 17.3403 5.63603 16.9497L10.5858 12L5.63603 7.05025C5.24551 6.65973 5.24551 6.02657 5.63603 5.63604Z"></path></svg>
+        </div>
+    </div>
+
+
+
+    <div class="algorithm-mention">
+        input
+        <span class="arrow">↓</span>
+        SHA-512
+        <span class="arrow">↓</span>
+        byte → byte % 94 + 33
+        <span class="arrow">⇓</span>    
+        [ ASCII [33; 126] ]
+    </div>
+
+
+
+    <script>
+        if ("ontouchstart" in window || navigator.maxTouchPoints > 0) {
+            document.querySelectorAll(".action-icon").forEach(icon => {
+                icon.classList.add("disable-hover");
+            });
+        }
+
+        let isVirtualKeyboard = false;
+        window.addEventListener("touchstart", () => {
+            isVirtualKeyboard = true;
+        }, { once: true });
+
+        function clearFields() {
+            document.getElementById("password").value = "";
+            document.getElementById("hashOutputValue").value = "";
+            document.getElementById("hashOutputVisible").textContent = "";
+            toggleHashOutput();
+        }
+
+        function toggleHashOutput() {  
+            const icon = document.getElementById("toggle-icon").querySelector("use");
+            const eyeIsOpen = icon.getAttribute("href") === "#icon-eye";
+            const isOutputValue = document.getElementById("hashOutputValue").value;
+            if(eyeIsOpen) {
+                document.getElementById("hashOutputHidden").hidden = isOutputValue ? false : true;
+                document.getElementById("hashOutputVisible").hidden = true;
+            } else {
+                document.getElementById("hashOutputHidden").hidden = true;
+                document.getElementById("hashOutputVisible").hidden = false;
+            };
+        }
+
+        // Function to convert hash bytes to printable characters in the range of 0x21 to 0x7E
+        function convertToPrintableChars(hashArray) {
+            return Array.from(hashArray)
+                .map(byte => {
+                    // Map byte to printable ASCII (range: 0x21 to 0x7E)
+                    const printableChar = String.fromCharCode(byte % 94 + 33);
+                    return printableChar;
+                })
+                .join('');  // Join the array into a single string
+        }
+
+        // Function to hash the password using SHA-512 and convert to printable characters
+        async function hashPassword() {
+            const password = document.getElementById("password").value;
+
+            if (password == "") {
+                clearFields();
+                return;
+            };
+
+            try {
+                const encoder = new TextEncoder();
+                const data = encoder.encode(password);
+                const hashBuffer = await window.crypto.subtle.digest('SHA-512', data);
+                const hashArray = new Uint8Array(hashBuffer);
+
+                document.getElementById("hashOutputValue").value = convertToPrintableChars(hashArray);
+
+                hashResult = document.getElementById("hashOutputValue").value;
+                toggleHashOutput();
+                document.getElementById("hashOutputVisible").textContent = hashResult;
+            } catch (error) {
+                alert("Error hashing password:", error);
+            }
+        }
+
+        // Toggle password visibility
+        document.getElementById('toggleEye').addEventListener('mousedown', function(event) {
+            event.preventDefault();
+            console.log(event);
+            const passwordField = document.getElementById('password');
+            const eyeIcon = document.getElementById('toggleEye');
+
+            const cursorPosition = passwordField.selectionStart;
+
+
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text'; // Show password
+                eyeIcon.innerHTML = '🙈';
+            } else {
+                passwordField.type = 'password'; // Hide password
+                eyeIcon.innerHTML = '👁️';
+            }
+
+            setTimeout(() => {
+                passwordField.setSelectionRange(cursorPosition, cursorPosition);
+            }, 0);
+        });
+        
+        document.getElementById('password').addEventListener('input', hashPassword);
+
+        function onClickCopyIcon() {
+            const copyButton = document.getElementById("copy-icon");
+
+            const copiedIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            copiedIcon.setAttribute("width", "24");
+            copiedIcon.setAttribute("height", "24");
+            copiedIcon.setAttribute("viewBox", "0 0 24 24");
+            copiedIcon.setAttribute("fill", "currentColor");
+            copiedIcon.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+            copiedIcon.setAttribute("class", "icon-md-heavy");
+            copiedIcon.innerHTML = `<path fill-rule="evenodd" clip-rule="evenodd" d="M18.0633 5.67387C18.5196 5.98499 18.6374 6.60712 18.3262 7.06343L10.8262 18.0634C10.6585 18.3095 10.3898 18.4679 10.0934 18.4957C9.79688 18.5235 9.50345 18.4178 9.29289 18.2072L4.79289 13.7072C4.40237 13.3167 4.40237 12.6835 4.79289 12.293C5.18342 11.9025 5.81658 11.9025 6.20711 12.293L9.85368 15.9396L16.6738 5.93676C16.9849 5.48045 17.607 5.36275 18.0633 5.67387Z"></path>`;
+
+            copiedIcon.style.color = "#800ed2";
+            copiedIcon.style.transform = "scale(1.3)";
+            copiedIcon.style.transition = "all 2s ease";
+
+            copyButton.replaceWith(copiedIcon);
+
+            setTimeout(() => {
+                copiedIcon.style.color = "#b0b0b0";
+                copiedIcon.style.transform = "scale(0.9)";
+            }, 100); // Small delay to ensure transition works
+            
+            // Revert to original icon after 1.5 seconds
+            setTimeout(() => {
+                copiedIcon.replaceWith(copyButton);
+            }, 1500);
+        }
+        function onClickToggleIcon() {
+            const icon = document.getElementById("toggle-icon").querySelector("use");
+            const eyeIsOpen = icon.getAttribute("href") === "#icon-eye";
+            icon.setAttribute("href", eyeIsOpen ? "#icon-eye-blind" : "#icon-eye");
+            hashPassword();
+        }
+        function onClicClearIconManual() {
+            clearFields();
+
+            const icon = document.getElementById("clear-icon");
+
+            if (icon) {
+                icon.classList.add("disable-hover-temp"); // Disable hover effect
+                icon.classList.add("action-icon-click-start-manual");
+
+                setTimeout(() => {
+                    icon.classList.replace("action-icon-click-start-manual", "action-icon-click-after-manual");
+                }, 100);
+
+                setTimeout(() => {
+                    icon.classList.remove("action-icon-click-after-manual");
+                    icon.classList.remove("disable-hover-temp"); // Restore hover effect
+                }, 800);
+            }
+        }
+
+        
+
+        document.getElementById("toggle-icon").addEventListener("click", onClickToggleIcon);
+        document.getElementById("clear-icon").addEventListener("click", clearFields);
+
+        new ClipboardJS('#copy-icon')
+        .on('success', function (e) {
+            onClickCopyIcon();
+        });
+
+
+
+        // Add event listener to handle 'Esc' and 'Enter' keys
+        document.addEventListener('keydown', function(event) {
+        
+            if (event.key === 'Escape') {
+                onClicClearIconManual();
+            } else if (event.key === 'Enter') {
+                const svgElement = document.getElementById("copy-icon");
+                if (svgElement) {
+                    const clickEvent = new MouseEvent('click', {
+                        bubbles: true,
+                        cancelable: true
+                    });
+                    svgElement.dispatchEvent(clickEvent);
+
+                    if(isVirtualKeyboard) {
+                        setTimeout(onClicClearIconManual, 500)
+                    }
+                } else {
+                    onClicClearIconManual();
+                }
+            } else if (event.key.length === 1) {
+                const passwordInput = document.getElementById('password');
+                if (document.activeElement !== passwordInput) {
+                    passwordInput.focus();
+                }
+            }
+        });
+        
+    </script>
+</body>
+</html>
